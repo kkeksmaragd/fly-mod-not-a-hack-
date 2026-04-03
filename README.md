@@ -14,14 +14,54 @@ This is a starter template for creating Minecraft mods using the **Fabric** modl
 
 ## What does this mod do RIGHT NOW?
 
-Almost nothing. If you added it to Minecraft today it would:
+`flymod.java` is the active mod class. It currently:
 
-- Print `"Hello Fabric world!"` in the game log when the game starts.
-- Do nothing else — no new items, blocks, or gameplay changes.
+- Registers a **client-side chat command** `/fly check inv`
+- When run in-game, it checks whether the player has **at least 64 glass blocks** in their inventory and prints the result in chat
 
-It is just a **blank starting point** for you to build on.
+More actions will be added that use the glass-check as a requirement.
 
-## How to start building your mod
+## How to build the mod yourself
+
+### Prerequisites
+- **Java 21** installed and on your PATH
+- No other setup needed — Gradle downloads everything else automatically
+
+### Build commands
+
+Open a terminal in the project folder (`C:\01_dev\minecraft_mod`) and run:
+
+```bash
+# Build a .jar you can drop into your mods folder
+./gradlew build
+# Output: build/libs/template-mod-1.0.0.jar
+
+# Or launch Minecraft directly with the mod loaded (easiest for testing)
+./gradlew runClient
+
+# Launch a local test server with the mod
+./gradlew runServer
+
+# Regenerate Minecraft source files (needed after changing Minecraft/Fabric versions)
+./gradlew genSources
+```
+
+### Where is the built JAR?
+After `./gradlew build`, the file is at:
+```
+build/libs/template-mod-1.0.0.jar
+```
+Copy it to your Minecraft `mods/` folder alongside Fabric Loader and Fabric API.
+
+### Useful VS Code shortcuts
+| Shortcut | What it does |
+|----------|-------------|
+| `Ctrl+Shift+B` | Run the default build task |
+| `Ctrl+`` ` | Open the integrated terminal |
+| `Ctrl+P` | Quick-open any file by name |
+| `Ctrl+Shift+P` | Command palette |
+
+
 
 ### Step 1 — Rename things (make it yours)
 In `gradle.properties`, change:
