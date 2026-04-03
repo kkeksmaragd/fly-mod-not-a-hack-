@@ -19,7 +19,7 @@
 			"mods.example.TemplateMod"
 		],
 		"client": [
-			"mods.example.TemplateModClient"
+			"mods.example.flymod"
 		]
 	},
 	"mixins": [
